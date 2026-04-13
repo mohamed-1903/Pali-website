@@ -280,6 +280,128 @@
 
     .service-card:hover .service-tags span { border-color: var(--gray-600); }
 
+    /* GALLERY */
+    #gallery { background: var(--gray-100); }
+
+    .gallery-subtitle {
+      text-align: center;
+      color: var(--gray-600);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      max-width: 500px;
+      margin: -2rem auto 3rem;
+      line-height: 1.8;
+    }
+
+    .insta-embed {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .insta-profile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      padding: 1.5rem 2rem;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      margin-bottom: 2rem;
+    }
+
+    .insta-avatar {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .insta-info { text-align: left; }
+
+    .insta-info strong {
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .insta-info span {
+      font-size: 0.75rem;
+      color: var(--gray-400);
+    }
+
+    .insta-follow {
+      margin-left: auto;
+      padding: 0.5rem 1.5rem;
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+
+    .insta-follow:hover { opacity: 0.8; }
+
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
+
+    .insta-grid-item {
+      aspect-ratio: 1;
+      background: var(--gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      transition: opacity 0.3s;
+      cursor: pointer;
+    }
+
+    .insta-grid-item:hover { opacity: 0.8; }
+
+    .insta-grid-item svg {
+      width: 24px; height: 24px;
+      opacity: 0.3;
+    }
+
+    .insta-cta {
+      margin-top: 2rem;
+      display: inline-block;
+    }
+
+    .insta-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+
+    .insta-cta a:hover { opacity: 0.8; }
+
     /* ABOUT */
     #about { background: var(--gray-100); }
 
@@ -447,6 +569,7 @@
     <div class="nav-logo">LOGO</div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Galerie</a></li>
       <li><a href="#about">Über uns</a></li>
       <li><a href="#hours">Öffnungszeiten</a></li>
       <li><a href="#contact">Kontakt</a></li>
@@ -461,7 +584,7 @@
     <div class="hero-content">
       <h1>Friseur Pali</h1>
       <div class="hero-line"></div>
-      <p>Dein Friseur in deiner Stadt</p>
+      <p>Barbershop &amp; Damenfriseur in Ingolstadt</p>
     </div>
   </section>
 
@@ -488,6 +611,34 @@
     </div>
   </section>
 
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2 class="section-title reveal">Unsere Arbeiten</h2>
+    <div class="section-line reveal"></div>
+    <p class="gallery-subtitle reveal">Entdecke unsere neuesten Looks direkt von Instagram.</p>
+    <div class="insta-embed reveal">
+      <a href="https://instagram.com/pali.friseur" target="_blank" class="insta-profile">
+        <div class="insta-avatar">P</div>
+        <div class="insta-info">
+          <strong>Pali Friseur</strong>
+          <span>@pali.friseur</span>
+        </div>
+        <span class="insta-follow">Folgen</span>
+      </a>
+      <div class="insta-grid">
+        <a href="https://instagram.com/pali.friseur" target="_blank" class="insta-grid-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://instagram.com/pali.friseur" target="_blank" class="insta-grid-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://instagram.com/pali.friseur" target="_blank" class="insta-grid-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://instagram.com/pali.friseur" target="_blank" class="insta-grid-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://instagram.com/pali.friseur" target="_blank" class="insta-grid-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://instagram.com/pali.friseur" target="_blank" class="insta-grid-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+      </div>
+      <div class="insta-cta">
+        <a href="https://instagram.com/pali.friseur" target="_blank">Mehr auf Instagram →</a>
+      </div>
+    </div>
+  </section>
+
   <section id="about">
     <h2 class="section-title reveal">Über Uns</h2>
     <div class="section-line reveal"></div>
@@ -501,8 +652,8 @@
     <div class="section-line reveal"></div>
     <div class="hours-grid reveal">
       <div class="hours-row"><span class="day">Montag</span><span class="time">Geschlossen</span></div>
-      <div class="hours-row"><span class="day">Dienstag – Freitag</span><span class="time">09:00 – 18:00</span></div>
-      <div class="hours-row"><span class="day">Samstag</span><span class="time">09:00 – 14:00</span></div>
+      <div class="hours-row"><span class="day">Dienstag – Freitag</span><span class="time">09:00 – 19:00</span></div>
+      <div class="hours-row"><span class="day">Samstag</span><span class="time">09:00 – 18:00</span></div>
       <div class="hours-row"><span class="day">Sonntag</span><span class="time">Geschlossen</span></div>
     </div>
   </section>
@@ -510,9 +661,9 @@
   <section class="booking-section" id="booking">
     <h2 class="reveal">Termin vereinbaren</h2>
     <div class="booking-buttons reveal">
-      <a href="tel:+49XXXXXXXXX" class="btn btn-white">Anrufen</a>
-      <a href="https://wa.me/49XXXXXXXXX" class="btn btn-outline">WhatsApp</a>
-      <a href="https://instagram.com/DEIN_HANDLE" class="btn btn-outline">Instagram</a>
+      <a href="tel:+4917663728734" class="btn btn-white">Anrufen</a>
+      <a href="https://wa.me/4917663728734" class="btn btn-outline">WhatsApp</a>
+      <a href="https://instagram.com/pali.friseur" class="btn btn-outline">Instagram</a>
     </div>
   </section>
 
@@ -522,15 +673,15 @@
     <div class="contact-grid reveal">
       <div class="contact-item">
         <h4>Telefon</h4>
-        <a href="tel:+49XXXXXXXXX">+49 XXX XXXXXXX</a>
+        <a href="tel:+4917663728734">0176 / 63728734</a>
       </div>
       <div class="contact-item">
         <h4>Adresse</h4>
-        <p>Musterstraße 1<br>XXXXX Stadt</p>
+        <p>Äußerer Buxheimer Weg 50<br>85057 Ingolstadt</p>
       </div>
       <div class="contact-item">
         <h4>Instagram</h4>
-        <a href="https://instagram.com/DEIN_HANDLE" target="_blank">@friseurpali</a>
+        <a href="https://instagram.com/pali.friseur" target="_blank">@pali.friseur</a>
       </div>
     </div>
   </section>
