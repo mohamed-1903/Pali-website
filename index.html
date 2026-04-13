@@ -47,29 +47,13 @@
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
       text-decoration: none;
     }
 
-    .nav-logo-icon {
-      width: 36px; height: 36px;
-      background: var(--white);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--black);
-      font-family: var(--font-body);
-    }
-
-    .nav-logo-text {
-      color: var(--white);
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 400;
-      letter-spacing: 0.02em;
+    .nav-logo-img {
+      height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
     }
 
     .nav-links {
@@ -641,8 +625,7 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
-      <div class="nav-logo-icon">P</div>
-      <span class="nav-logo-text">Friseur Pali</span>
+      <img src="image.png" alt="Pali Friseur Logo" class="nav-logo-img">
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
