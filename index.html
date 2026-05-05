@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
     :root {
       --black: #0a0a0a;
       --white: #fafafa;
@@ -22,9 +22,9 @@
       --font-display: 'Cormorant Garamond', serif;
       --font-body: 'Manrope', sans-serif;
     }
-
+ 
     html { scroll-behavior: smooth; }
-
+ 
     body {
       font-family: var(--font-body);
       background: var(--white);
@@ -32,7 +32,7 @@
       font-weight: 300;
       overflow-x: hidden;
     }
-
+ 
     /* ── NAV ── */
     nav {
       position: fixed;
@@ -45,13 +45,13 @@
       background: rgba(10,10,10,0.95);
       backdrop-filter: blur(10px);
     }
-
+ 
     .nav-logo {
       display: flex;
       align-items: center;
       text-decoration: none;
     }
-
+ 
     .nav-logo-img {
       height: 44px;
       width: auto;
@@ -59,13 +59,13 @@
       padding: 4px 8px;
       border-radius: 4px;
     }
-
+ 
     .nav-links {
       display: flex;
       gap: 2.5rem;
       list-style: none;
     }
-
+ 
     .nav-links a {
       color: var(--white);
       text-decoration: none;
@@ -76,7 +76,7 @@
       position: relative;
       transition: opacity 0.3s;
     }
-
+ 
     .nav-links a::after {
       content: '';
       position: absolute;
@@ -85,10 +85,10 @@
       background: var(--white);
       transition: width 0.3s;
     }
-
+ 
     .nav-links a:hover::after { width: 100%; }
     .nav-links a:hover { opacity: 0.8; }
-
+ 
     .nav-cta {
       color: var(--black) !important;
       background: var(--white);
@@ -101,13 +101,13 @@
       font-weight: 500;
       transition: background 0.3s, color 0.3s, outline 0.3s;
     }
-
+ 
     .nav-cta:hover {
       background: transparent;
       color: var(--white) !important;
       outline: 1px solid var(--white);
     }
-
+ 
     .hamburger {
       display: none;
       flex-direction: column;
@@ -122,7 +122,7 @@
       background: var(--white);
       transition: 0.3s;
     }
-
+ 
     /* ── HERO ── */
     .hero {
       height: 100vh;
@@ -136,7 +136,7 @@
       overflow: hidden;
       background: var(--black);
     }
-
+ 
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -148,14 +148,14 @@
       transform: scale(1.05);
       animation: heroZoom 20s ease-in-out infinite alternate;
     }
-
+ 
     @keyframes heroZoom {
       0% { transform: scale(1.05); }
       100% { transform: scale(1.12); }
     }
-
+ 
     .hero-content { position: relative; z-index: 1; }
-
+ 
     .hero h1 {
       font-family: var(--font-display);
       font-size: clamp(3.5rem, 8vw, 8rem);
@@ -165,14 +165,14 @@
       margin-bottom: 1.5rem;
       animation: fadeUp 1s ease-out;
     }
-
+ 
     .hero-line {
       width: 60px; height: 1px;
       background: rgba(255,255,255,0.5);
       margin: 0 auto 1.5rem;
       animation: fadeUp 1s ease-out 0.2s both;
     }
-
+ 
     .hero p {
       font-size: 0.85rem;
       letter-spacing: 0.25em;
@@ -181,12 +181,12 @@
       font-weight: 300;
       animation: fadeUp 1s ease-out 0.4s both;
     }
-
+ 
     .hero-cta {
       margin-top: 2.5rem;
       animation: fadeUp 1s ease-out 0.6s both;
     }
-
+ 
     .hero-cta a {
       padding: 0.9rem 2.5rem;
       background: var(--white);
@@ -199,21 +199,21 @@
       font-weight: 500;
       transition: all 0.3s;
     }
-
+ 
     .hero-cta a:hover {
       background: transparent;
       color: var(--white);
       outline: 1px solid var(--white);
     }
-
+ 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
+ 
     /* ── SECTIONS ── */
     section { padding: 6rem 4rem; }
-
+ 
     .section-title {
       font-family: var(--font-display);
       font-size: clamp(2rem, 4vw, 3.5rem);
@@ -221,16 +221,16 @@
       text-align: center;
       margin-bottom: 1rem;
     }
-
+ 
     .section-line {
       width: 40px; height: 1px;
       background: var(--black);
       margin: 0 auto 3rem;
     }
-
+ 
     /* ── SERVICES ── */
     #services { background: var(--white); }
-
+ 
     .services-subtitle {
       text-align: center;
       color: var(--gray-600);
@@ -240,7 +240,7 @@
       margin: -2rem auto 3rem;
       line-height: 1.8;
     }
-
+ 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -248,15 +248,15 @@
       max-width: 950px;
       margin: 0 auto;
     }
-
+ 
     .service-card {
       text-align: center;
       transition: transform 0.4s;
       overflow: hidden;
     }
-
+ 
     .service-card:hover { transform: translateY(-6px); }
-
+ 
     .service-img {
       width: 100%;
       height: 320px;
@@ -264,34 +264,34 @@
       display: block;
       transition: filter 0.4s;
     }
-
+ 
     .service-card-body {
       padding: 1.5rem 1rem;
       border: 1px solid var(--gray-200);
       border-top: none;
     }
-
+ 
     .service-card h3 {
       font-family: var(--font-display);
       font-size: 1.5rem;
       font-weight: 400;
       margin-bottom: 0.8rem;
     }
-
+ 
     .service-card p {
       font-size: 0.8rem;
       color: var(--gray-600);
       line-height: 1.7;
       margin-bottom: 1rem;
     }
-
+ 
     .service-tags {
       display: flex;
       gap: 0.5rem;
       justify-content: center;
       flex-wrap: wrap;
     }
-
+ 
     .service-tags span {
       font-size: 0.65rem;
       letter-spacing: 0.1em;
@@ -299,14 +299,14 @@
       padding: 0.3rem 0.8rem;
       border: 1px solid var(--gray-200);
     }
-
+ 
     /* ── PRICES ── */
     #prices {
       background: linear-gradient(135deg, #f5f1e8 0%, #faf6ed 100%);
       position: relative;
       overflow: hidden;
     }
-
+ 
     #prices::before, #prices::after {
       content: '';
       position: absolute;
@@ -314,26 +314,26 @@
       background: var(--black);
       z-index: 0;
     }
-
+ 
     #prices::before {
       top: -100px; left: -100px;
       transform: rotate(45deg);
       box-shadow: 0 0 0 2px var(--gold);
     }
-
+ 
     #prices::after {
       bottom: -100px; right: -100px;
       transform: rotate(45deg);
       box-shadow: 0 0 0 2px var(--gold);
     }
-
+ 
     .prices-wrapper {
       max-width: 1100px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
     }
-
+ 
     #prices .section-title {
       letter-spacing: 0.2em;
       font-family: var(--font-body);
@@ -341,13 +341,13 @@
       font-size: clamp(1.6rem, 3vw, 2.5rem);
       text-transform: uppercase;
     }
-
+ 
     #prices .section-line {
       background: var(--gold);
       width: 80px;
       height: 1.5px;
     }
-
+ 
     .price-tabs {
       display: flex;
       justify-content: center;
@@ -355,7 +355,7 @@
       margin-bottom: 3rem;
       flex-wrap: wrap;
     }
-
+ 
     .price-tab {
       padding: 0.7rem 2rem;
       background: transparent;
@@ -369,18 +369,18 @@
       cursor: pointer;
       transition: all 0.3s;
     }
-
+ 
     .price-tab.active {
       background: var(--black);
       border-color: var(--black);
       color: var(--white);
     }
-
+ 
     .price-tab:hover:not(.active) { border-color: var(--black); color: var(--black); }
-
+ 
     .price-list { display: none; }
     .price-list.active { display: block; }
-
+ 
     .price-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -388,7 +388,7 @@
       background: var(--white);
       border: 1px solid var(--gray-200);
     }
-
+ 
     .price-row {
       display: flex;
       justify-content: space-between;
@@ -397,9 +397,9 @@
       border-bottom: 1px solid var(--gray-200);
       gap: 1rem;
     }
-
+ 
     .price-row:nth-child(odd) { border-right: 1px solid var(--gray-200); }
-
+ 
     .price-row .icon {
       width: 36px; height: 36px;
       background: var(--black);
@@ -409,19 +409,19 @@
       justify-content: center;
       flex-shrink: 0;
     }
-
+ 
     .price-row .icon svg {
       width: 18px; height: 18px;
       color: var(--gold);
     }
-
+ 
     .price-row .label {
       flex: 1;
       font-size: 0.85rem;
       color: var(--black);
       font-weight: 400;
     }
-
+ 
     .price-row .label small {
       display: block;
       font-size: 0.7rem;
@@ -429,14 +429,14 @@
       font-weight: 300;
       margin-top: 0.2rem;
     }
-
+ 
     .price-row .price {
       font-size: 0.95rem;
       font-weight: 600;
       color: var(--black);
       white-space: nowrap;
     }
-
+ 
     .price-section-header {
       grid-column: 1 / -1;
       background: var(--black);
@@ -449,7 +449,7 @@
       font-family: var(--font-display);
       font-style: italic;
     }
-
+ 
     .price-note {
       text-align: center;
       margin-top: 1.5rem;
@@ -461,7 +461,7 @@
       margin-right: auto;
       line-height: 1.7;
     }
-
+ 
     .price-thanks {
       text-align: center;
       margin-top: 2rem;
@@ -473,10 +473,10 @@
       text-transform: uppercase;
       font-weight: 500;
     }
-
+ 
     /* ── GALLERY ── */
     #gallery { background: var(--gray-100); }
-
+ 
     .gallery-subtitle {
       text-align: center;
       color: var(--gray-600);
@@ -486,13 +486,13 @@
       margin: -2rem auto 3rem;
       line-height: 1.8;
     }
-
+ 
     .insta-embed {
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
     }
-
+ 
     .insta-profile {
       display: flex;
       align-items: center;
@@ -505,9 +505,9 @@
       color: var(--black);
       transition: border-color 0.3s;
     }
-
+ 
     .insta-profile:hover { border-color: var(--black); }
-
+ 
     .insta-avatar {
       width: 56px; height: 56px;
       border-radius: 50%;
@@ -519,26 +519,26 @@
       flex-shrink: 0;
       overflow: hidden;
     }
-
+ 
     .insta-avatar img {
       width: 100%; height: 100%;
       object-fit: cover;
     }
-
+ 
     .insta-info { text-align: left; }
-
+ 
     .insta-info strong {
       font-size: 0.95rem;
       font-weight: 500;
       display: block;
       margin-bottom: 0.2rem;
     }
-
+ 
     .insta-info span {
       font-size: 0.75rem;
       color: var(--gray-400);
     }
-
+ 
     .insta-follow {
       margin-left: auto;
       padding: 0.5rem 1.5rem;
@@ -550,30 +550,30 @@
       font-family: var(--font-body);
       font-weight: 500;
     }
-
+ 
     .insta-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 4px;
     }
-
+ 
     .insta-grid-item {
       aspect-ratio: 1;
       display: block;
       overflow: hidden;
       transition: opacity 0.3s;
     }
-
+ 
     .insta-grid-item img {
       width: 100%; height: 100%;
       object-fit: cover;
       transition: transform 0.4s;
     }
-
+ 
     .insta-grid-item:hover img { transform: scale(1.05); }
-
+ 
     .insta-cta { margin-top: 2rem; }
-
+ 
     .insta-cta a {
       display: inline-flex;
       align-items: center;
@@ -589,12 +589,12 @@
       font-weight: 500;
       transition: opacity 0.3s;
     }
-
+ 
     .insta-cta a:hover { opacity: 0.8; }
-
+ 
     /* ── ABOUT ── */
     #about { background: var(--white); }
-
+ 
     .about-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -603,20 +603,20 @@
       margin: 0 auto;
       align-items: center;
     }
-
+ 
     .about-img {
       width: 100%;
       height: 400px;
       object-fit: cover;
     }
-
+ 
     .about-text p {
       font-size: 0.9rem;
       line-height: 2;
       color: var(--gray-600);
       margin-bottom: 1.5rem;
     }
-
+ 
     /* ── HOURS ── */
     #hours {
       background: var(--black);
@@ -624,7 +624,7 @@
       position: relative;
       overflow: hidden;
     }
-
+ 
     .hours-bg {
       position: absolute;
       inset: 0;
@@ -633,18 +633,18 @@
       background-position: center;
       opacity: 0.12;
     }
-
+ 
     #hours .section-title,
     #hours .section-line,
     #hours .hours-grid { position: relative; z-index: 1; }
-
+ 
     #hours .section-line { background: var(--white); }
-
+ 
     .hours-grid {
       max-width: 400px;
       margin: 0 auto;
     }
-
+ 
     .hours-row {
       display: flex;
       justify-content: space-between;
@@ -652,13 +652,13 @@
       border-bottom: 1px solid rgba(255,255,255,0.1);
       font-size: 0.85rem;
     }
-
+ 
     .hours-row .day { font-weight: 400; letter-spacing: 0.05em; }
     .hours-row .time { color: var(--gray-400); }
-
+ 
     /* ── CONTACT ── */
     #contact { background: var(--gray-100); }
-
+ 
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -667,7 +667,7 @@
       margin: 0 auto;
       text-align: center;
     }
-
+ 
     .contact-item h4 {
       font-size: 0.7rem;
       letter-spacing: 0.2em;
@@ -676,7 +676,7 @@
       margin-bottom: 0.8rem;
       font-weight: 500;
     }
-
+ 
     .contact-item p, .contact-item a {
       font-family: var(--font-display);
       font-size: 1.2rem;
@@ -684,9 +684,9 @@
       text-decoration: none;
       transition: opacity 0.3s;
     }
-
+ 
     .contact-item a:hover { opacity: 0.6; }
-
+ 
     /* ── BOOKING ── */
     .booking-section {
       background: var(--black);
@@ -694,27 +694,27 @@
       text-align: center;
       padding: 5rem 4rem;
     }
-
+ 
     .booking-section h2 {
       font-family: var(--font-display);
       font-size: clamp(1.8rem, 3vw, 2.8rem);
       font-weight: 300;
       margin-bottom: 0.8rem;
     }
-
+ 
     .booking-section .booking-sub {
       color: var(--gray-400);
       font-size: 0.8rem;
       margin-bottom: 2rem;
     }
-
+ 
     .booking-buttons {
       display: flex;
       gap: 1rem;
       justify-content: center;
       flex-wrap: wrap;
     }
-
+ 
     .btn {
       display: inline-flex;
       align-items: center;
@@ -730,21 +730,21 @@
       cursor: pointer;
       border: none;
     }
-
+ 
     .btn-white { background: var(--white); color: var(--black); }
     .btn-white:hover {
       background: transparent;
       color: var(--white);
       outline: 1px solid var(--white);
     }
-
+ 
     .btn-outline {
       background: transparent;
       color: var(--white);
       outline: 1px solid var(--gray-600);
     }
     .btn-outline:hover { outline-color: var(--white); }
-
+ 
     /* ── FOOTER ── */
     footer {
       background: var(--black);
@@ -755,7 +755,7 @@
       letter-spacing: 0.1em;
       border-top: 1px solid rgba(255,255,255,0.08);
     }
-
+ 
     /* ── SCROLL REVEAL ── */
     .reveal {
       opacity: 0;
@@ -763,7 +763,7 @@
       transition: opacity 0.8s, transform 0.8s;
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-
+ 
     /* ── MOBILE ── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
@@ -796,7 +796,7 @@
   </style>
 </head>
 <body>
-
+ 
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
@@ -815,7 +815,7 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
-
+ 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
@@ -828,7 +828,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- SERVICES -->
   <section id="services">
     <h2 class="section-title reveal">Unsere Services</h2>
@@ -861,18 +861,18 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- PRICES -->
   <section id="prices">
     <div class="prices-wrapper">
       <h2 class="section-title reveal">Preisliste</h2>
       <div class="section-line reveal"></div>
-
+ 
       <div class="price-tabs reveal">
         <button class="price-tab active" onclick="showPrices('herren', this)">Herren</button>
         <button class="price-tab" onclick="showPrices('damen', this)">Damen</button>
       </div>
-
+ 
       <!-- HERREN -->
       <div class="price-list active reveal" id="herren-list">
         <div class="price-grid">
@@ -965,7 +965,7 @@
         </div>
         <div class="price-thanks">Vielen Dank für Ihr Vertrauen</div>
       </div>
-
+ 
       <!-- DAMEN -->
       <div class="price-list reveal" id="damen-list">
         <div class="price-grid">
@@ -1000,7 +1000,7 @@
             <span class="label">Splissschnitt</span>
             <span class="price">15 €</span>
           </div>
-
+ 
           <div class="price-section-header">Farbe</div>
           <div class="price-row">
             <div class="icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg></div>
@@ -1012,7 +1012,7 @@
             <span class="label">Längenausgleich</span>
             <span class="price">55 €</span>
           </div>
-
+ 
           <div class="price-section-header">Strähnen</div>
           <div class="price-row">
             <div class="icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></div>
@@ -1024,14 +1024,14 @@
             <span class="label">Ganzer Kopf</span>
             <span class="price">ab 95 €</span>
           </div>
-
+ 
           <div class="price-section-header">Balayage Paket</div>
           <div class="price-row">
             <div class="icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5 5 2 8-7-4-7 4 2-8-5-5h7z"/></svg></div>
             <span class="label">Technik, Glossing, Spezialpflege, Schnitt &amp; Styling<small>je nach Beratung</small></span>
             <span class="price">ab 200 €</span>
           </div>
-
+ 
           <div class="price-section-header">Tönung</div>
           <div class="price-row">
             <div class="icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg></div>
@@ -1043,7 +1043,7 @@
             <span class="label">Rückpigmentierung</span>
             <span class="price">ab 90 €</span>
           </div>
-
+ 
           <div class="price-section-header">Dauerwelle</div>
           <div class="price-row">
             <div class="icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12c4 0 4-4 8-4s4 4 8 4"/></svg></div>
@@ -1065,7 +1065,7 @@
             <span class="label">Ganzer Kopf</span>
             <span class="price">70 €</span>
           </div>
-
+ 
           <div class="price-section-header">Hochsteckfrisuren</div>
           <div class="price-row">
             <div class="icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v4m0 12v4m10-10h-4M6 12H2"/></svg></div>
@@ -1082,7 +1082,7 @@
             <span class="label">Flechten</span>
             <span class="price">ab 30 €</span>
           </div>
-
+ 
           <div class="price-section-header">Service</div>
           <div class="price-row">
             <div class="icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7"/></svg></div>
@@ -1109,14 +1109,14 @@
             <span class="label">Gesicht mit Faden</span>
             <span class="price">ab 5 €</span>
           </div>
-
+ 
           <div class="price-section-header">Extensions</div>
           <div class="price-row">
             <div class="icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M5 7l7 5 7-5"/></svg></div>
             <span class="label">Hochsetzen pro Sandwich</span>
             <span class="price">4,50 €</span>
           </div>
-
+ 
           <div class="price-section-header">Kinder Haarschnitt (Mädchen)</div>
           <div class="price-row">
             <div class="icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 014-4h8a4 4 0 014 4v2"/></svg></div>
@@ -1138,7 +1138,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- GALLERY -->
   <section id="gallery">
     <h2 class="section-title reveal">Unsere Arbeiten</h2>
@@ -1166,7 +1166,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- ABOUT -->
   <section id="about">
     <h2 class="section-title reveal">Über Uns</h2>
@@ -1179,7 +1179,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- HOURS -->
   <section id="hours">
     <div class="hours-bg"></div>
@@ -1192,7 +1192,7 @@
       <div class="hours-row"><span class="day">Sonntag</span><span class="time">Geschlossen</span></div>
     </div>
   </section>
-
+ 
   <!-- BOOKING -->
   <section class="booking-section" id="booking">
     <h2 class="reveal">Termin vereinbaren</h2>
@@ -1203,7 +1203,7 @@
       <a href="https://instagram.com/pali.friseur" class="btn btn-outline">Instagram</a>
     </div>
   </section>
-
+ 
   <!-- CONTACT -->
   <section id="contact">
     <h2 class="section-title reveal">Kontakt</h2>
@@ -1223,10 +1223,10 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- FOOTER -->
   <footer>&copy; 2026 Friseur Pali. Alle Rechte vorbehalten.</footer>
-
+ 
   <script>
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
@@ -1236,7 +1236,7 @@
       });
     }, { threshold: 0.15 });
     reveals.forEach(el => observer.observe(el));
-
+ 
     // Price tabs
     function showPrices(type, btn) {
       document.querySelectorAll('.price-list').forEach(el => el.classList.remove('active'));
@@ -1245,6 +1245,7 @@
       btn.classList.add('active');
     }
   </script>
-
+ 
 </body>
 </html>
+ 
