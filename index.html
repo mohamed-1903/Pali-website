@@ -1178,7 +1178,7 @@
     <div class="section-line reveal"></div>
     <div class="reviews-grid">
       <div class="review-card reveal">
-        <div class="review-stars"></div>
+        <div class="review-stars">★★★★★</div>
         <p class="review-text">„Super netter und sehr guter Frisör."</p>
         <div class="review-author">
           <div class="review-avatar">L</div>
@@ -1189,7 +1189,7 @@
         </div>
       </div>
       <div class="review-card reveal">
-        <div class="review-stars"></div>
+        <div class="review-stars">★★★★★</div>
         <p class="review-text">„Preis-/Leistung ist genial gut und der Umgang ist ausgesprochen freundlich."</p>
         <div class="review-author">
           <div class="review-avatar">G</div>
@@ -1200,7 +1200,7 @@
         </div>
       </div>
       <div class="review-card reveal">
-        <div class="review-stars"></div>
+        <div class="review-stars">★★★★★</div>
         <p class="review-text">„Aus Hamburg, hab spontan einen Friseur gesucht und genau den richtigen gefunden."</p>
         <div class="review-author">
           <div class="review-avatar">V</div>
@@ -1211,7 +1211,7 @@
         </div>
       </div>
       <div class="review-card reveal">
-        <div class="review-stars"></div>
+        <div class="review-stars">★★★★★</div>
         <p class="review-text">„Alles perfekt, super Friseur. Habe öfter hier bereits meine Haare schneiden lassen, jedes Mal top zufrieden. Man merkt richtig, dass sich das Personal Mühe gibt. Auch die Sauberkeit ist 1A. Kann jedem nur empfehlen, hier her zu kommen."</p>
         <div class="review-author">
           <div class="review-avatar">G</div>
@@ -1223,7 +1223,7 @@
       </div>
     </div>
     <div class="reviews-cta reveal">
-      <a href="https://g.page/r/pali-friseur/review" target="_blank">Bewertung hinterlassen →</a>
+      <a href="https://www.google.com/maps/place/Friseur+Pali/@48.7732337,11.4013265,17z/data=!4m8!3m7!1s0x479eff5aaa3eabcf:0x56eafccdd1402a2a!8m2!3d48.7732337!4d11.4013265!9m1!1b1" target="_blank">Bewertung hinterlassen →</a>
     </div>
   </section>
 
@@ -1316,55 +1316,45 @@
     <div style="margin-bottom: 1rem;">
       &copy; 2026 Friseur Pali. Alle Rechte vorbehalten.
     </div>
-    <a href="#impressum" style="color: var(--gray-400); text-decoration: none; letter-spacing: 0.1em; font-size: 0.7rem; margin: 0 1rem; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#999'">Impressum</a>
-    <a href="#datenschutz" style="color: var(--gray-400); text-decoration: none; letter-spacing: 0.1em; font-size: 0.7rem; margin: 0 1rem; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#999'">Datenschutz</a>
+    <a href="#" onclick="document.getElementById('impressum-modal').style.display='flex'; return false;" style="color: var(--gray-400); text-decoration: none; letter-spacing: 0.1em; font-size: 0.7rem; margin: 0 1rem; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#999'">Impressum</a>
+    <a href="#" onclick="document.getElementById('datenschutz-modal').style.display='flex'; return false;" style="color: var(--gray-400); text-decoration: none; letter-spacing: 0.1em; font-size: 0.7rem; margin: 0 1rem; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#999'">Datenschutz</a>
   </footer>
 
-  <!-- IMPRESSUM -->
-  <section id="impressum" style="background: #f8f8f8; padding: 4rem;">
-    <div style="max-width: 700px; margin: 0 auto;">
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; margin-bottom: 1rem;">Impressum</h2>
-      <div style="width: 40px; height: 1px; background: #0a0a0a; margin-bottom: 2rem;"></div>
-
-      <p style="font-size: 0.8rem; color: #666; margin-bottom: 1.5rem;">Angaben gemäß § 5 DDG</p>
-
-      <p style="font-size: 0.85rem; line-height: 1.9; color: #444; margin-bottom: 1.5rem;">
-        <strong>[VORNAME NACHNAME]</strong> <!-- Bitte Namen eintragen --><br>
+  <!-- IMPRESSUM MODAL -->
+  <div id="impressum-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:999; align-items:center; justify-content:center; padding:1rem;" onclick="if(event.target===this)this.style.display='none'">
+    <div style="background:#fff; max-width:680px; width:100%; max-height:85vh; overflow-y:auto; padding:3rem; position:relative;">
+      <button onclick="document.getElementById('impressum-modal').style.display='none'" style="position:absolute; top:1.2rem; right:1.5rem; background:none; border:none; font-size:1.8rem; cursor:pointer; color:#999; line-height:1;">&times;</button>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; margin-bottom:1rem;">Impressum</h2>
+      <div style="width:40px; height:1px; background:#0a0a0a; margin-bottom:2rem;"></div>
+      <p style="font-size:0.8rem; color:#666; margin-bottom:1.5rem;">Angaben gemäß § 5 DDG</p>
+      <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">
+        <strong>Perparim Kurti</strong><br>
         Äußerer Buxheimer Weg 50<br>
         85057 Ingolstadt
       </p>
-
-      <p style="font-size: 0.85rem; line-height: 1.9; color: #444; margin-bottom: 1.5rem;">
+      <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">
         <strong>Kontakt:</strong><br>
         Telefon: 0176 / 63728734<br>
-        E-Mail: <a href="mailto:friseur.pali@gmail.com" style="color: #0a0a0a;">friseur.pali@gmail.com</a>
+        E-Mail: <a href="mailto:friseur.pali@gmail.com" style="color:#0a0a0a;">friseur.pali@gmail.com</a>
       </p>
-
-      <p style="font-size: 0.85rem; line-height: 1.9; color: #444; margin-bottom: 1.5rem;">
+      <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">
         <strong>Verbraucherstreitbeilegung / Universalschlichtungsstelle</strong><br>
         Wir nehmen nicht an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teil und sind dazu auch nicht verpflichtet.
       </p>
-
-      <p style="font-size: 0.85rem; line-height: 1.9; color: #444; margin-bottom: 1.5rem;">
+      <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">
         <strong>Haftung für Inhalte</strong><br>
         Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
       </p>
-
-      <p style="font-size: 0.85rem; line-height: 1.9; color: #444; margin-bottom: 1.5rem;">
+      <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">
         <strong>Haftung für Links</strong><br>
         Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
       </p>
-
-      <p style="font-size: 0.85rem; line-height: 1.9; color: #444; margin-bottom: 1.5rem;">
+      <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:0;">
         <strong>Urheberrecht</strong><br>
         Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
       </p>
-
-      <p style="font-size: 0.75rem; color: #999; margin-top: 2rem;">
-        Erstellt mit dem Impressum-Generator von impressum-generator.de
-      </p>
     </div>
-  </section>
+  </div>
 
   <script>
     // Scroll reveal
@@ -1384,6 +1374,54 @@
       btn.classList.add('active');
     }
   </script>
+
+
+  <!-- DATENSCHUTZ MODAL -->
+  <div id="datenschutz-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:999; align-items:center; justify-content:center; padding:1rem;" onclick="if(event.target===this)this.style.display='none'">
+    <div style="background:#fff; max-width:680px; width:100%; max-height:85vh; overflow-y:auto; padding:3rem; position:relative;">
+      <button onclick="document.getElementById('datenschutz-modal').style.display='none'" style="position:absolute; top:1.2rem; right:1.5rem; background:none; border:none; font-size:1.8rem; cursor:pointer; color:#999; line-height:1;">&times;</button>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; margin-bottom:1rem;">Datenschutzerklärung</h2>
+      <div style="width:40px; height:1px; background:#0a0a0a; margin-bottom:2rem;"></div>
+
+      <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">
+        <strong>1. Verantwortlicher</strong><br>
+        Perparim Kurti<br>
+        Äußerer Buxheimer Weg 50, 85057 Ingolstadt<br>
+        E-Mail: friseur.pali@gmail.com<br>
+        Telefon: 0176 / 63728734
+      </p>
+
+      <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">
+        <strong>2. Hosting</strong><br>
+        Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) gehostet. Beim Besuch der Website werden automatisch technische Zugriffsdaten (IP-Adresse, Uhrzeit, Browsertyp) durch GitHub erfasst. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen finden Sie in der Datenschutzerklärung von GitHub: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" style="color:#0a0a0a;">github.com</a>
+      </p>
+
+      <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">
+        <strong>3. Google Fonts</strong><br>
+        Diese Website verwendet Google Fonts (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). Dabei wird beim Laden der Seite eine Verbindung zu Google-Servern hergestellt und Ihre IP-Adresse übertragen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Weitere Infos: <a href="https://policies.google.com/privacy" target="_blank" style="color:#0a0a0a;">policies.google.com/privacy</a>
+      </p>
+
+      <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">
+        <strong>4. Externe Links</strong><br>
+        Diese Website enthält Links zu externen Diensten wie Instagram (Meta Platforms Ireland Ltd.) und WhatsApp (WhatsApp LLC). Wenn Sie auf diese Links klicken, gelten die Datenschutzbestimmungen der jeweiligen Anbieter. Wir haben keinen Einfluss auf deren Datenverarbeitung.
+      </p>
+
+      <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">
+        <strong>5. Cookies</strong><br>
+        Diese Website verwendet keine eigenen Cookies. Externe Dienste (Google Fonts, GitHub) können technisch notwendige Cookies setzen.
+      </p>
+
+      <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">
+        <strong>6. Kontaktaufnahme</strong><br>
+        Wenn Sie uns per Telefon, WhatsApp oder E-Mail kontaktieren, werden Ihre Angaben zur Bearbeitung Ihrer Anfrage gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO. Die Daten werden nicht an Dritte weitergegeben.
+      </p>
+
+      <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:0;">
+        <strong>7. Ihre Rechte</strong><br>
+        Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten (Art. 15–18 DSGVO). Außerdem haben Sie ein Widerspruchsrecht (Art. 21 DSGVO) sowie das Recht auf Datenübertragbarkeit (Art. 20 DSGVO). Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: friseur.pali@gmail.com. Sie haben zudem das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren.
+      </p>
+    </div>
+  </div>
 
 </body>
 </html>
