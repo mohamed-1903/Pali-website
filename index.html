@@ -876,8 +876,11 @@
       .reviews-grid { grid-template-columns: 1fr; }
     }
   </style>
+  <link rel="stylesheet" href="refresh.css">
+  <meta name="theme-color" content="#243e36">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
 
   <!-- NAV -->
   <nav>
@@ -894,23 +897,30 @@
       <li><a href="#contact">Kontakt</a></li>
     </ul>
     <a href="#booking" class="nav-cta">Termin buchen</a>
-    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <button class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
+  <main id="main-content">
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg"></div>
+  <section class="hero" aria-labelledby="hero-title">
     <div class="hero-content">
-      <h1>Friseur Pali</h1>
-      <div class="hero-line"></div>
-      <p>Barbershop &amp; Damenfriseur in Ingolstadt</p>
+      <p class="eyebrow">Friseur Pali · Ingolstadt</p>
+      <h1 id="hero-title">Dein Look.<br>Dein Stil.<br><em>Dein Moment.</em></h1>
+      <p class="hero-description">Dein Barbershop &amp; Damenfriseur in Ingolstadt. Ehrliches Handwerk, persönliche Beratung und ein Look, der zu dir passt.</p>
       <div class="hero-cta">
-        <a href="#booking">Termin vereinbaren</a>
+        <a href="#booking">Termin vereinbaren <span aria-hidden="true">↗</span></a>
+        <a href="#services" class="hero-secondary">Salon entdecken <span aria-hidden="true">↓</span></a>
       </div>
+      <div class="hero-detail"><span class="detail-dot" aria-hidden="true"></span> Für dich da: Di – Sa, 09:00 – 18:00 Uhr</div>
     </div>
+    <figure class="hero-visual">
+      <img src="salon.jpeg" alt="Ein Blick in unseren Salon in Ingolstadt mit Stylingplätzen und Waschbereich" fetchpriority="high" width="1176" height="1568">
+      <figcaption><span>Ein guter Look beginnt hier.</span><span>Willkommen bei Pali <span aria-hidden="true">↗</span></span></figcaption>
+    </figure>
   </section>
+  <div class="salon-strip" aria-label="Unser Angebot"><span>Persönliche Beratung</span><span>Präzises Handwerk</span><span>Damen &amp; Herren</span><a href="#contact">Zuhause in Ingolstadt <span aria-hidden="true">↗</span></a></div>
 
   <!-- SERVICES -->
   <section id="services">
@@ -1315,6 +1325,7 @@
     </div>
   </section>
 
+  </main>
   <!-- FOOTER -->
   <footer>
     <div style="margin-bottom: 1rem;">
@@ -1370,12 +1381,33 @@
     }, { threshold: 0.15 });
     reveals.forEach(el => observer.observe(el));
 
+    function toggleMenu(force) {
+      const links = document.getElementById('navLinks');
+      const button = document.querySelector('.hamburger');
+      const open = typeof force === 'boolean' ? force : !links.classList.contains('open');
+      links.classList.toggle('open', open);
+      button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    }
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && document.querySelector('.nav-links.open')) {
+        toggleMenu(false);
+        document.querySelector('.hamburger').focus();
+      }
+    });
+    document.querySelectorAll('.price-tab').forEach(button => button.setAttribute('aria-pressed', String(button.classList.contains('active'))));
+
     // Price tabs
     function showPrices(type, btn) {
       document.querySelectorAll('.price-list').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.price-tab').forEach(el => el.classList.remove('active'));
-      document.getElementById(type + '-list').classList.add('active');
+      document.querySelectorAll('.price-tab').forEach(el => {
+        el.classList.remove('active');
+        el.setAttribute('aria-pressed', 'false');
+      });
+      document.getElementById(type + '-list').classList.add('active', 'visible');
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
     }
   </script>
 
