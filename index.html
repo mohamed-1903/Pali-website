@@ -8,8 +8,8 @@
   <meta name="google-site-verification" content="SzxD8LN2hchojvJh5h3kL7DogZQliA0Rft6i_hQfP0A" />
   <link rel="icon" type="image/png" href="image.png">
   <link rel="apple-touch-icon" href="image.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts/fonts.css">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -26,7 +26,7 @@
       --font-body: 'Manrope', sans-serif;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
 
     body {
       font-family: var(--font-body);
@@ -129,6 +129,7 @@
     /*  HERO  */
     .hero {
       height: 100vh;
+      height: 100svh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -401,7 +402,7 @@
       gap: 1rem;
     }
 
-    .price-row:nth-child(odd) { border-right: 1px solid var(--gray-200); }
+    .price-row { box-shadow: 1px 0 0 var(--gray-200); }
 
     .price-row .label {
       flex: 1;
@@ -837,6 +838,16 @@
       border-top: 1px solid rgba(255,255,255,0.08);
     }
 
+    .footer-link {
+      color: var(--gray-400);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      font-size: 0.7rem;
+      margin: 0 1rem;
+      transition: color 0.3s;
+    }
+    .footer-link:hover { color: var(--white); }
+
     /*  SCROLL REVEAL  */
     .reveal {
       opacity: 0;
@@ -851,16 +862,18 @@
       .hamburger { display: flex; }
       .nav-links {
         position: fixed;
-        top: 0; right: -100%;
+        top: 0; right: 0;
         width: 75%; height: 100vh;
+        transform: translateX(100%);
+        visibility: hidden;
         background: rgba(10,10,10,0.98);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 2rem;
-        transition: right 0.4s;
+        transition: transform 0.4s, visibility 0.4s;
       }
-      .nav-links.open { right: 0; }
+      .nav-links.open { transform: translateX(0); visibility: visible; }
       .nav-cta { display: none; }
       section { padding: 4rem 1.5rem; }
       .booking-section { padding: 4rem 1.5rem; }
@@ -872,7 +885,6 @@
       .insta-profile { flex-wrap: wrap; gap: 0.8rem; }
       .insta-follow { margin-left: 0; }
       .price-grid { grid-template-columns: 1fr; }
-      .price-row:nth-child(odd) { border-right: none; }
       .reviews-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -881,7 +893,7 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">
+    <a href="#" class="nav-logo" aria-label="Friseur Pali – zum Seitenanfang">
       <img src="image.png" alt="Pali Friseur Logo" class="nav-logo-img">
     </a>
     <ul class="nav-links" id="navLinks">
@@ -894,7 +906,7 @@
       <li><a href="#contact">Kontakt</a></li>
     </ul>
     <a href="#booking" class="nav-cta">Termin buchen</a>
-    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -919,7 +931,7 @@
     <p class="services-subtitle reveal">Jeder Service beginnt mit einer Beratung. Wir nehmen uns Zeit für dich.</p>
     <div class="services-grid">
       <div class="service-card reveal">
-        <img src="damen.jpeg" alt="Damen Haarschnitt" class="service-img">
+        <img src="damen.jpeg" alt="Damen Haarschnitt" loading="lazy" class="service-img">
         <div class="service-card-body">
           <h3>Damen</h3>
           <p>Schnitt, Styling und Pflege – abgestimmt auf deinen Look.</p>
@@ -927,7 +939,7 @@
         </div>
       </div>
       <div class="service-card reveal">
-        <img src="herren.jpeg" alt="Herren Haarschnitt" class="service-img">
+        <img src="herren.jpeg" alt="Herren Haarschnitt" loading="lazy" class="service-img">
         <div class="service-card-body">
           <h3>Herren</h3>
           <p>Präzise Schnitte und klassische Pflege für den modernen Mann.</p>
@@ -935,7 +947,7 @@
         </div>
       </div>
       <div class="service-card reveal">
-        <img src="farbe.jpeg" alt="Haarfarbe Balayage" class="service-img">
+        <img src="farbe.jpeg" alt="Haarfarbe Balayage" loading="lazy" class="service-img">
         <div class="service-card-body">
           <h3>Farbe</h3>
           <p>Von natürlichen Highlights bis zu kreativen Looks.</p>
@@ -1029,7 +1041,7 @@
             <span class="price">26 €</span>
           </div>
         </div>
-        <div class="price-thanks">Vielen Dank für Ihr Vertrauen</div>
+        <div class="price-thanks">Vielen Dank für dein Vertrauen</div>
       </div>
 
       <!-- DAMEN -->
@@ -1171,7 +1183,7 @@
             <span class="price">ab 24 €</span>
           </div>
         </div>
-        <p class="price-note">Alle Preise verstehen sich ab – je nach Aufwand und Haarlänge. Bitte beachten Sie, dass für längeres und dickeres Haar ein Aufpreis berechnet wird.</p>
+        <p class="price-note">Alle Preise verstehen sich ab – je nach Aufwand und Haarlänge. Für längeres und dickeres Haar wird ein Aufpreis berechnet.</p>
       </div>
     </div>
   </section>
@@ -1183,7 +1195,7 @@
     <div class="reviews-grid">
       <div class="review-card reveal">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">„Super netter und sehr guter Frisör."</p>
+        <p class="review-text">„Super netter und sehr guter Frisör.“</p>
         <div class="review-author">
           <div class="review-avatar">L</div>
           <div>
@@ -1194,7 +1206,7 @@
       </div>
       <div class="review-card reveal">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">„Preis-/Leistung ist genial gut und der Umgang ist ausgesprochen freundlich."</p>
+        <p class="review-text">„Preis-/Leistung ist genial gut und der Umgang ist ausgesprochen freundlich.“</p>
         <div class="review-author">
           <div class="review-avatar">G</div>
           <div>
@@ -1205,7 +1217,7 @@
       </div>
       <div class="review-card reveal">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">„Aus Hamburg, hab spontan einen Friseur gesucht und genau den richtigen gefunden."</p>
+        <p class="review-text">„Aus Hamburg, hab spontan einen Friseur gesucht und genau den richtigen gefunden.“</p>
         <div class="review-author">
           <div class="review-avatar">V</div>
           <div>
@@ -1216,18 +1228,18 @@
       </div>
       <div class="review-card reveal">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">„Alles perfekt, super Friseur. Habe öfter hier bereits meine Haare schneiden lassen, jedes Mal top zufrieden. Man merkt richtig, dass sich das Personal Mühe gibt. Auch die Sauberkeit ist 1A. Kann jedem nur empfehlen, hier her zu kommen."</p>
+        <p class="review-text">„Alles perfekt, super Friseur. Habe öfter hier bereits meine Haare schneiden lassen, jedes Mal top zufrieden. Man merkt richtig, dass sich das Personal Mühe gibt. Auch die Sauberkeit ist 1A. Kann jedem nur empfehlen, hier her zu kommen.“</p>
         <div class="review-author">
           <div class="review-avatar">G</div>
           <div>
             <div class="review-name">Google Nutzer</div>
-            <div class="review-source">Google Bewertung · vor 6 Monaten</div>
+            <div class="review-source">Google Bewertung</div>
           </div>
         </div>
       </div>
     </div>
     <div class="reviews-cta reveal">
-      <a href="https://maps.app.goo.gl/Wamcm5dPCNEsefhC9" target="_blank">Bewertung hinterlassen →</a>
+      <a href="https://maps.app.goo.gl/Wamcm5dPCNEsefhC9" target="_blank" rel="noopener">Bewertung hinterlassen →</a>
     </div>
   </section>
 
@@ -1237,7 +1249,7 @@
     <div class="section-line reveal"></div>
     <p class="gallery-subtitle reveal">Entdecke unsere neuesten Looks direkt von Instagram.</p>
     <div class="insta-embed reveal">
-      <a href="https://instagram.com/pali.friseur" target="_blank" class="insta-profile">
+      <a href="https://instagram.com/pali.friseur" target="_blank" rel="noopener" class="insta-profile">
         <div class="insta-avatar"><img src="image.png" alt="Pali Friseur"></div>
         <div class="insta-info">
           <strong>Pali Friseur</strong>
@@ -1246,15 +1258,15 @@
         <span class="insta-follow">Folgen</span>
       </a>
       <div class="insta-grid">
-        <a href="https://instagram.com/pali.friseur" target="_blank" class="insta-grid-item"><img src="herren.jpeg" alt="Herrenschnitt"></a>
-        <a href="https://instagram.com/pali.friseur" target="_blank" class="insta-grid-item"><img src="damen.jpeg" alt="Damenschnitt"></a>
-        <a href="https://instagram.com/pali.friseur" target="_blank" class="insta-grid-item"><img src="farbe.jpeg" alt="Haarfarbe"></a>
-        <a href="https://instagram.com/pali.friseur" target="_blank" class="insta-grid-item"><img src="salon.jpeg" alt="Salon"></a>
-        <a href="https://instagram.com/pali.friseur" target="_blank" class="insta-grid-item"><img src="damen2.jpeg" alt="Damenschnitt"></a>
-        <a href="https://instagram.com/pali.friseur" target="_blank" class="insta-grid-item"><img src="herren2.jpeg" alt="Herrenschnitt"></a>
+        <a href="https://instagram.com/pali.friseur" target="_blank" rel="noopener" class="insta-grid-item"><img loading="lazy" src="herren.jpeg" alt="Herrenschnitt"></a>
+        <a href="https://instagram.com/pali.friseur" target="_blank" rel="noopener" class="insta-grid-item"><img loading="lazy" src="damen.jpeg" alt="Damenschnitt"></a>
+        <a href="https://instagram.com/pali.friseur" target="_blank" rel="noopener" class="insta-grid-item"><img loading="lazy" src="farbe.jpeg" alt="Haarfarbe"></a>
+        <a href="https://instagram.com/pali.friseur" target="_blank" rel="noopener" class="insta-grid-item"><img loading="lazy" src="salon.jpeg" alt="Salon"></a>
+        <a href="https://instagram.com/pali.friseur" target="_blank" rel="noopener" class="insta-grid-item"><img loading="lazy" src="damen2.jpeg" alt="Damenschnitt"></a>
+        <a href="https://instagram.com/pali.friseur" target="_blank" rel="noopener" class="insta-grid-item"><img loading="lazy" src="herren2.jpeg" alt="Herrenschnitt"></a>
       </div>
       <div class="insta-cta">
-        <a href="https://instagram.com/pali.friseur" target="_blank">Mehr auf Instagram →</a>
+        <a href="https://instagram.com/pali.friseur" target="_blank" rel="noopener">Mehr auf Instagram →</a>
       </div>
     </div>
   </section>
@@ -1264,7 +1276,7 @@
     <h2 class="section-title reveal">Über Uns</h2>
     <div class="section-line reveal"></div>
     <div class="about-wrapper reveal">
-      <img src="salon.jpeg" alt="Pali Friseur Salon" class="about-img">
+      <img src="salon.jpeg" alt="Pali Friseur Salon" loading="lazy" class="about-img">
       <div class="about-text">
         <p>Bei Friseur Pali glauben wir, dass ein guter Haarschnitt mehr ist als nur Technik – es ist ein Erlebnis. Unser Team verbindet Handwerk mit Leidenschaft, damit du dich bei uns wohlfühlst und mit einem Lächeln gehst.</p>
         <p>Ob klassischer Herrenschnitt, modernes Styling oder kreative Farbveränderung – wir sind für dich da.</p>
@@ -1290,8 +1302,8 @@
     <p class="booking-sub reveal">Ruf an, schreib uns oder komm einfach vorbei.</p>
     <div class="booking-buttons reveal">
       <a href="tel:+4917663728734" class="btn btn-white">Anrufen</a>
-      <a href="https://wa.me/4917663728734" class="btn btn-outline">WhatsApp</a>
-      <a href="https://instagram.com/pali.friseur" class="btn btn-outline">Instagram</a>
+      <a href="https://wa.me/4917663728734" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp</a>
+      <a href="https://instagram.com/pali.friseur" target="_blank" rel="noopener" class="btn btn-outline">Instagram</a>
     </div>
   </section>
 
@@ -1306,11 +1318,11 @@
       </div>
       <div class="contact-item">
         <h4>Adresse</h4>
-        <p>Äußerer Buxheimer Weg 50<br>85057 Ingolstadt</p>
+        <a href="https://maps.app.goo.gl/Wamcm5dPCNEsefhC9" target="_blank" rel="noopener">Äußerer Buxheimer Weg 50<br>85057 Ingolstadt</a>
       </div>
       <div class="contact-item">
         <h4>Instagram</h4>
-        <a href="https://instagram.com/pali.friseur" target="_blank">@pali.friseur</a>
+        <a href="https://instagram.com/pali.friseur" target="_blank" rel="noopener">@pali.friseur</a>
       </div>
     </div>
   </section>
@@ -1320,14 +1332,14 @@
     <div style="margin-bottom: 1rem;">
       &copy; 2026 Friseur Pali. Alle Rechte vorbehalten.
     </div>
-    <a href="#" onclick="document.getElementById('impressum-modal').style.display='flex'; return false;" style="color: var(--gray-400); text-decoration: none; letter-spacing: 0.1em; font-size: 0.7rem; margin: 0 1rem; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#999'">Impressum</a>
-    <a href="#" onclick="document.getElementById('datenschutz-modal').style.display='flex'; return false;" style="color: var(--gray-400); text-decoration: none; letter-spacing: 0.1em; font-size: 0.7rem; margin: 0 1rem; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#999'">Datenschutz</a>
+    <a href="#impressum" class="footer-link" onclick="openModal('impressum-modal'); return false;">Impressum</a>
+    <a href="#datenschutz" class="footer-link" onclick="openModal('datenschutz-modal'); return false;">Datenschutz</a>
   </footer>
 
   <!-- IMPRESSUM MODAL -->
-  <div id="impressum-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:999; align-items:center; justify-content:center; padding:1rem;" onclick="if(event.target===this)this.style.display='none'">
+  <div id="impressum-modal" role="dialog" aria-modal="true" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:999; align-items:center; justify-content:center; padding:1rem;" onclick="if(event.target===this)closeModals()">
     <div style="background:#fff; max-width:680px; width:100%; max-height:85vh; overflow-y:auto; padding:3rem; position:relative;">
-      <button onclick="document.getElementById('impressum-modal').style.display='none'" style="position:absolute; top:1.2rem; right:1.5rem; background:none; border:none; font-size:1.8rem; cursor:pointer; color:#999; line-height:1;">&times;</button>
+      <button onclick="closeModals()" aria-label="Schließen" style="position:absolute; top:1.2rem; right:1.5rem; background:none; border:none; font-size:1.8rem; cursor:pointer; color:#999; line-height:1;">&times;</button>
       <h2 style="font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; margin-bottom:1rem;">Impressum</h2>
       <div style="width:40px; height:1px; background:#0a0a0a; margin-bottom:2rem;"></div>
       <p style="font-size:0.8rem; color:#666; margin-bottom:1.5rem;">Angaben gemäß § 5 DDG</p>
@@ -1360,30 +1372,11 @@
     </div>
   </div>
 
-  <script>
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.15 });
-    reveals.forEach(el => observer.observe(el));
-
-    // Price tabs
-    function showPrices(type, btn) {
-      document.querySelectorAll('.price-list').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.price-tab').forEach(el => el.classList.remove('active'));
-      document.getElementById(type + '-list').classList.add('active');
-      btn.classList.add('active');
-    }
-  </script>
-
 
   <!-- DATENSCHUTZ MODAL -->
-  <div id="datenschutz-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:999; align-items:center; justify-content:center; padding:1rem;" onclick="if(event.target===this)this.style.display='none'">
+  <div id="datenschutz-modal" role="dialog" aria-modal="true" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:999; align-items:center; justify-content:center; padding:1rem;" onclick="if(event.target===this)closeModals()">
     <div style="background:#fff; max-width:720px; width:100%; max-height:88vh; overflow-y:auto; padding:3rem; position:relative;">
-      <button onclick="document.getElementById('datenschutz-modal').style.display='none'" style="position:absolute; top:1.2rem; right:1.5rem; background:none; border:none; font-size:1.8rem; cursor:pointer; color:#999; line-height:1;">&times;</button>
+      <button onclick="closeModals()" aria-label="Schließen" style="position:absolute; top:1.2rem; right:1.5rem; background:none; border:none; font-size:1.8rem; cursor:pointer; color:#999; line-height:1;">&times;</button>
       <h2 style="font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; margin-bottom:1rem;">Datenschutzerklärung</h2>
       <div style="width:40px; height:1px; background:#0a0a0a; margin-bottom:2rem;"></div>
 
@@ -1394,7 +1387,7 @@
       <p style="font-size:0.82rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">Sie haben jederzeit das Recht auf Auskunft, Berichtigung oder Löschung Ihrer gespeicherten personenbezogenen Daten sowie das Recht auf Einschränkung der Verarbeitung, Widerspruch und Datenübertragbarkeit. Bei Fragen wenden Sie sich an: friseur.pali@gmail.com</p>
 
       <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1rem;"><strong>2. Hosting</strong></p>
-      <p style="font-size:0.82rem; line-height:1.9; color:#444; margin-bottom:1rem;"><strong>IONOS</strong><br>Anbieter ist die IONOS SE, Elgendorfer Str. 57, 56410 Montabaur. Wenn Sie unsere Website besuchen, erfasst IONOS verschiedene Logfiles inklusive Ihrer IP-Adressen. Details entnehmen Sie der Datenschutzerklärung von IONOS: <a href="https://www.ionos.de/terms-gtc/terms-privacy" target="_blank" style="color:#0a0a0a;">ionos.de/terms-gtc/terms-privacy</a></p>
+      <p style="font-size:0.82rem; line-height:1.9; color:#444; margin-bottom:1rem;"><strong>IONOS</strong><br>Anbieter ist die IONOS SE, Elgendorfer Str. 57, 56410 Montabaur. Wenn Sie unsere Website besuchen, erfasst IONOS verschiedene Logfiles inklusive Ihrer IP-Adressen. Details entnehmen Sie der Datenschutzerklärung von IONOS: <a href="https://www.ionos.de/terms-gtc/terms-privacy" target="_blank" rel="noopener" style="color:#0a0a0a;">ionos.de/terms-gtc/terms-privacy</a></p>
       <p style="font-size:0.82rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">Die Verwendung von IONOS erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben einen Vertrag über Auftragsverarbeitung (AVV) mit IONOS geschlossen.</p>
 
       <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1rem;"><strong>3. Allgemeine Hinweise und Pflichtinformationen</strong></p>
@@ -1407,14 +1400,62 @@
       <p style="font-size:0.82rem; line-height:1.9; color:#444; margin-bottom:1.5rem;"><strong>Anfrage per E-Mail oder Telefon</strong><br>Wenn Sie uns per E-Mail oder Telefon kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten zum Zwecke der Bearbeitung bei uns gespeichert. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. Die Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern oder der Zweck entfällt.</p>
 
       <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1rem;"><strong>5. Soziale Medien – Instagram</strong></p>
-      <p style="font-size:0.82rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">Auf dieser Website sind Links und Funktionen des Dienstes Instagram eingebunden. Anbieter: Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland. Wenn Sie auf den Instagram-Link klicken, wird eine direkte Verbindung zwischen Ihrem Endgerät und dem Instagram-Server hergestellt. Instagram erhält dadurch Informationen über den Besuch dieser Website. Die Nutzung erfolgt auf Grundlage Ihrer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Weitere Infos: <a href="https://privacycenter.instagram.com/policy/" target="_blank" style="color:#0a0a0a;">privacycenter.instagram.com/policy</a></p>
+      <p style="font-size:0.82rem; line-height:1.9; color:#444; margin-bottom:1.5rem;">Auf dieser Website sind Links und Funktionen des Dienstes Instagram eingebunden. Anbieter: Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland. Wenn Sie auf den Instagram-Link klicken, wird eine direkte Verbindung zwischen Ihrem Endgerät und dem Instagram-Server hergestellt. Instagram erhält dadurch Informationen über den Besuch dieser Website. Die Nutzung erfolgt auf Grundlage Ihrer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Weitere Infos: <a href="https://privacycenter.instagram.com/policy/" target="_blank" rel="noopener" style="color:#0a0a0a;">privacycenter.instagram.com/policy</a></p>
 
       <p style="font-size:0.85rem; line-height:1.9; color:#444; margin-bottom:1rem;"><strong>6. Analyse-Tools</strong></p>
-      <p style="font-size:0.82rem; line-height:1.9; color:#444; margin-bottom:1.5rem;"><strong>IONOS WebAnalytics</strong><br>Diese Website nutzt die Analysedienste von IONOS WebAnalytics. Dabei werden u.a. Besucherzahlen, Besucherverhalten und technische Daten anonymisiert erfasst. Cookies werden von IONOS WebAnalytics nicht gespeichert. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Weitere Infos: <a href="https://www.ionos.de/terms-gtc/datenschutzerklaerung/" target="_blank" style="color:#0a0a0a;">ionos.de/terms-gtc/datenschutzerklaerung</a></p>
+      <p style="font-size:0.82rem; line-height:1.9; color:#444; margin-bottom:1.5rem;"><strong>IONOS WebAnalytics</strong><br>Diese Website nutzt die Analysedienste von IONOS WebAnalytics. Dabei werden u.a. Besucherzahlen, Besucherverhalten und technische Daten anonymisiert erfasst. Cookies werden von IONOS WebAnalytics nicht gespeichert. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Weitere Infos: <a href="https://www.ionos.de/terms-gtc/datenschutzerklaerung/" target="_blank" rel="noopener" style="color:#0a0a0a;">ionos.de/terms-gtc/datenschutzerklaerung</a></p>
 
       <p style="font-size:0.75rem; color:#999; margin-top:1rem;">Quelle: eRecht24.de</p>
     </div>
   </div>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // Mobile Menü
+    const navLinks = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburger');
+    function setMenu(open) {
+      navLinks.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+      hamburger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    }
+    hamburger.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+    // Impressum / Datenschutz
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModals() {
+      document.querySelectorAll('[role="dialog"]').forEach(m => m.style.display = 'none');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { closeModals(); setMenu(false); }
+    });
+    if (location.hash === '#impressum') openModal('impressum-modal');
+    if (location.hash === '#datenschutz') openModal('datenschutz-modal');
+
+    // Price tabs
+    function showPrices(type, btn) {
+      document.querySelectorAll('.price-list').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.price-tab').forEach(el => el.classList.remove('active'));
+      document.getElementById(type + '-list').classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
